@@ -1,3 +1,12 @@
+<?php
+    
+    session_start();
+    if(isset($_SESSION['usuario'])){
+        header("location: pokemon.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +22,12 @@
             <div class="contenedor__todo">
                 <div class="caja__trasera">
                     <div class="caja__trasera-login">
-                        <h3>¿Tienes una cuenta?</h3>
+                        <h3>¿Ya tienes cuenta?</h3>
                         <p>¡Inicia sesión aqui!</p>
                         <button id="btn__iniciar-sesion">Iniciar Sesión</button>
                     </div>
                     <div class="caja__trasera-register">
-                        <h3>¿Tienes cuenta?</h3>
+                        <h3>¿No tienes cuenta?</h3>
                         <p>¡Regístrate aqui!</p>
                         <button id="btn__registrarse">Regístrate</button>
                     </div>
@@ -27,20 +36,20 @@
                 <!--Formulario de Login y SingIn-->
                 <div class="contenedor__login-register">
                     <!--Login-->
-                    <form action="" class="formulario__login">
+                    <form action="php/login_usuario_be.php" method= "POST" class="formulario__login">
                         <h2>Iniciar Sesión :)</h2>
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
+                        <input type="text" placeholder="Correo Electronico" name="correo">
+                        <input type="password" placeholder="Contraseña" name= "contrasena">
                         <button>Entrar</button>
                     </form>
 
                     <!--SingIn-->
-                    <form action="" class="formulario__register">
+                    <form action="php/registro_usuario_be.php" method= "POST" class="formulario__register">
                         <h2>Regístrarse</h2>
-                        <input type="text" placeholder="Nombre completo">
-                        <input type="text" placeholder="Correo Electronico">
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
+                        <input type="text" name="nombre_completo" placeholder="Nombre completo">
+                        <input type="text" name="correo" placeholder="Correo Electronico">
+                        <input type="text" name= "usuario"placeholder="Usuario">
+                        <input type="password" name="contrasena" placeholder="Contraseña">
                         <button>Regístrarse</button>
                     </form>
                 </div>
