@@ -9,13 +9,14 @@ $contrasena= $_POST["contrasena"];
 
 //Encripta contraseña
 //$contrasena= hash('sha512',$contrasena);
+// comparar el hash con el texto plano, para la seguridad
 
 $query="INSERT INTO usuarios(nombre_completo, correo, usuario, contrasena)
         VALUES('$nombre_completo' , '$correo', '$usuario', '$contrasena')";
 
 // Verificacion que no se repite el correo en la base de datos
 $verificar_correo = mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo ='$correo' ");
-
+// linea 23 revisar para que no te saque y te mande de vuelta
 if(mysqli_num_rows($verificar_correo) > 0){
     echo'
     <script>

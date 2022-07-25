@@ -10,7 +10,7 @@ and contrasena='$contrasena'");
 
 if(mysqli_num_rows($validar_login) > 0) {
     $_SESSION['usuario'] = $correo;
-    header("location:../pokemon.php");
+    header("location: ../tutorial-pokedex-master/index1.php");
     exit;
 }else{
     echo '

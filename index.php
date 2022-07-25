@@ -1,11 +1,10 @@
 <?php
-    
     session_start();
     if(isset($_SESSION['usuario'])){
-        header("location: pokemon.php");
+        header("location: ../tutorial-pokedex-master/index1.php"); 
+        //header("location: pokemon.php");
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
